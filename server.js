@@ -4,16 +4,10 @@ const express = require('express');
 
 const app = express();
 
-
-
-// Middleware
 app.use(express.json());
 
 app.use(express.static('public'));
 
-
-
-// Bonus Middleware
 app.use((req, res, next) => {
 
     console.log(req.method, req.url);
@@ -23,18 +17,11 @@ app.use((req, res, next) => {
 });
 
 
-
-// GET /
-
 app.get('/', (req, res) => {
 
     res.send('My Week 2 API');
 
 });
-
-
-
-// POST /user
 
 app.post('/user', (req, res) => {
 
@@ -57,8 +44,6 @@ app.post('/user', (req, res) => {
 
 });
 
-
-// GET /user/:id
 
 
 app.get('/user/:id', (req, res) => {
